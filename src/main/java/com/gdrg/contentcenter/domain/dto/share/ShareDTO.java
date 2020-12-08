@@ -1,19 +1,17 @@
-package com.gdrg.contentcenter.domain.entity.share;
+package com.gdrg.contentcenter.domain.dto.share;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "shareContent")
-public class Sharecontent {
-    @Id
-    @GeneratedValue(generator = "JDBC")
+public class ShareDTO {
     private Integer id;
 
     private String content;
@@ -22,8 +20,8 @@ public class Sharecontent {
 
     private String title;
 
-    @Column(name = "user_id")
     private Integer userId;
 
+    private String nickName;//昵称，从用户表里面的用户名获取
 
 }
