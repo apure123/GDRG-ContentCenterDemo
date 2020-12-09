@@ -5,5 +5,12 @@ spring:
       username: root
       password: ${dbpassword}
       driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.31.228:8848
+  application:
+    #注意，服务名称不要用下划线
+    name: user-center
 server:
   port: 8081
