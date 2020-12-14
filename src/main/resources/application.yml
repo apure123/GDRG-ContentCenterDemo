@@ -8,9 +8,21 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 192.168.31.228:8848
+        server-addr: 192.168.31.227:8848
+        metadata:
+          instancevalue: nihao
+          version: v1
   application:
     #注意，服务名称不要用下划线
-    name: user-center
+    name: content-center
 server:
   port: 8081
+
+user-center:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+ribbon:
+  eager-load:
+    enabled: true
+    clients: user-center
