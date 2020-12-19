@@ -30,3 +30,8 @@ ribbon:
 logging:
   level:
     com.gdrg.contentcenter.feignClient.UserCenterFeignClient: debug
+feign:
+  client:
+    config:
+      user-center:
+        loggerLevel: full

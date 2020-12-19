@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 //这里指定需要请求的微服务的名称
-@FeignClient(name = "user-center",configuration = UserCenterFeignConfiguration.class)
+//@FeignClient(name = "user-center",configuration = UserCenterFeignConfiguration.class)
+@FeignClient(name = "user-center")
 public interface UserCenterFeignClient {
 
     /**
