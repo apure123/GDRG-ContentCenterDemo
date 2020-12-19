@@ -1,12 +1,13 @@
 package com.gdrg.contentcenter.feignClient;
 
+import com.gdrg.contentcenter.configuration.UserCenterFeignConfiguration;
 import com.gdrg.contentcenter.domain.dto.user.UserDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 //这里指定需要请求的微服务的名称
-@FeignClient(name = "user-center")
+@FeignClient(name = "user-center",configuration = UserCenterFeignConfiguration.class)
 public interface UserCenterFeignClient {
 
     /**
